@@ -1,0 +1,38 @@
+package com.acat.hibernate.demo1;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.acat.hibernate.utils.HibernateUtils;
+
+/**
+ * Hibernate的一级缓存的测试
+ * @author Administrator
+ *
+ */
+public class HibernateDemo3 {
+	@Test
+	//证明一级缓存的存在
+	public void demo1(){
+		Session session = HibernateUtils.openSession();
+		Transaction transaction = session.beginTransaction();
+		/*
+		Customer customer = session.get(Customer.class, 1l);
+		System.out.println(customer);
+		
+		Customer customer2 = session.get(Customer.class, 1l);
+		System.out.println(customer2);
+		
+		System.out.println(customer == customer2);*/
+		
+		Customer customer = new Customer();
+		customer.setCust_name("玩glow");
+		
+		
+		
+		
+		transaction.commit();
+		session.close();
+	}
+}

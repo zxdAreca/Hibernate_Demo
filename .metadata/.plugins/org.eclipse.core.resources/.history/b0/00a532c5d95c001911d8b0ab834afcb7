@@ -1,0 +1,16 @@
+package com.acat.hibernate.demo1;
+
+import org.junit.Test;
+
+/**
+ * Hibernate 的主键生成策略
+ * @author Administrator
+ *
+ */
+public class HibernateDemo1 {
+	
+	@Test
+	public void demo1(){
+		
+	}
+}

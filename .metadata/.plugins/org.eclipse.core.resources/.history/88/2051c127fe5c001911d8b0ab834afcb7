@@ -1,0 +1,9 @@
+package com.acat.hibernate.demo1;
+/**
+ * Hibernate的持久化类的三种状态
+ * @author Administrator
+ *
+ */
+public class HibernateDemo2 {
+	
+}

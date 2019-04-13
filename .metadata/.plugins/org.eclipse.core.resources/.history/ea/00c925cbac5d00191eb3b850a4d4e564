@@ -1,0 +1,27 @@
+package com.acat.hibernate.demo1;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.acat.hibernate.utils.HibernateUtils;
+
+/**
+ * Hibernate 的其他API
+ * @author Administrator
+ *
+ */
+public class HibernateDemo5 {
+	@Test
+	public void demo1(){
+		Session session = HibernateUtils.getCurrentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		//通过Session获得Query接口
+		String hql = "from customer";
+		Query query = session.createQuery(hql);
+		
+		transaction.commit();
+	}
+}

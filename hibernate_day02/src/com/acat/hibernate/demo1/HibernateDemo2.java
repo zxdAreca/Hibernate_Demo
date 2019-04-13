@@ -1,0 +1,49 @@
+package com.acat.hibernate.demo1;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.acat.hibernate.utils.HibernateUtils;
+
+/**
+ * Hibernate的持久化类的三种状态
+ * @author Administrator
+ *
+ */
+public class HibernateDemo2 {
+	
+	@Test
+	public void demo1(){
+		Session session = HibernateUtils.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Customer customer = new Customer();		//瞬时态对象：没有唯一标识OID，没有被session管理
+		customer.setCust_name("王东");
+		Serializable id = session.save(customer);//持久态对象：有唯一标识OID，被session管理
+		
+		session.get(Customer.class, id);
+		
+		transaction.commit();
+		session.close();
+		
+		System.out.println("客户名称："+customer.getCust_name());//托管态对象：有唯一标识OID ,没有session管理
+	}
+	
+	@Test
+	//持久态对象自动更新数据库
+	public void demo2(){
+		Session session = HibernateUtils.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		//获得持久态对象：
+		Customer customer = session.get(Customer.class, 1l);
+		customer.setCust_name("王西");
+		
+		
+		transaction.commit();
+		session.close();	
+	}
+}

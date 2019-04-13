@@ -1,0 +1,37 @@
+package com.acat.hibernate.demo1;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.junit.Test;
+
+import com.acat.hibernate.utils.HibernateUtils;
+
+/**
+ * Hibernate 的其他API
+ * @author Administrator
+ *
+ */
+public class HibernateDemo5 {
+	@Test
+	public void demo1(){
+		Session session = HibernateUtils.getCurrentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		//通过Session获得Query接口
+		//简单查询
+		//String hql = "from customer";
+		
+		//String hql = "from Customer where cust_name like ?";
+		Query query = session.createQuery(hql);
+		query.setString(0, "王%");
+		List<Customer> list = query.list();
+		for (Customer customer : list) {
+			System.out.println(customer);
+		}
+		
+		transaction.commit();
+	}
+}

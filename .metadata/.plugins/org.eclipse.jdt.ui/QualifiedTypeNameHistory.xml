@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.acat.hibernate.util.HibernateUtils"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.CreationTimestamp"/>
+<fullyQualifiedTypeName name="com.acat.hibernate.demo1.HibernateDemo1"/>
+<fullyQualifiedTypeName name="com.acat.hibernate.demo1.Customer"/>
+<fullyQualifiedTypeName name="org.junit.Test.None"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="com.acat.hibernate.utils.HibernateUtils"/>
+<fullyQualifiedTypeName name="org.hibernate.criterion.Restrictions"/>
+</qualifiedTypeNameHistroy>
